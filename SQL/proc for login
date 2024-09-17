@@ -1,0 +1,9 @@
+create   procedure splogin
+@user varchar(100),
+@password varchar(100),
+@islogin bit output
+as
+if exists(select '' from ms_user where user_name = @username and password = @password where is_active=1)
+set @islogin = 1
+else
+set @islogin = 0
