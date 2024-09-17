@@ -1,0 +1,11 @@
+        [HttpPost] 
+        public async Task<IActionResult> Create(Transaction transaction)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Tr_bpkb.Add(transaction);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return OK;
+        }
