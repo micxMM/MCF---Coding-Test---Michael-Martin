@@ -1,0 +1,11 @@
+backend 
+var ddLokasi = db.Ms_storage_location.ToList();
+
+        lokasi.DataSource = ddLokasi;
+        lokasi.DataTextField = "location_name";
+        lokasi.DataValueField = "location_id";
+        lokasi.DataBind();
+
+frontend
+<asp:DropDownList id="lokasi" runat="server"  >
+</asp:DropDownList>  
